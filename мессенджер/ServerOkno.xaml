@@ -1,0 +1,30 @@
+﻿<Window x:Class="мессенджер.ServerOkno"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ServerOkno" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="list1" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="6"/>
+        <TextBox materialDesign:HintAssist.Hint="Сообщение" x:Name="textbox1" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2"  FontSize="20"  Height="50" />
+        <Button x:Name="btnotp" Grid.Row="4" Grid.Column="5"/>
+        <Button x:Name="btnclose" Content="выйти" Grid.Row="4" Grid.Column="2" Click="btnclose_Click"/>
+    </Grid>
+</Window>
