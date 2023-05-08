@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ServerOkno" Height="450" Width="800">
+        Title="ServerOkno" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -22,9 +22,11 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <TextBlock x:Name="polz" Grid.Row="0" Text="пользователи:"  VerticalAlignment="Center"/>
         <ListBox x:Name="list1" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="6"/>
+        <ListBox x:Name="listU" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
         <TextBox materialDesign:HintAssist.Hint="Сообщение" x:Name="textbox1" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2"  FontSize="20"  Height="50" />
-        <Button x:Name="btnotp" Grid.Row="4" Grid.Column="5"/>
+        <Button x:Name="btnotp" Content="отправить" Grid.Row="4" Grid.Column="5" Click="btnotp_Click"/>
         <Button x:Name="btnclose" Content="выйти" Grid.Row="4" Grid.Column="2" Click="btnclose_Click"/>
     </Grid>
 </Window>

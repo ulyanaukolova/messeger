@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,7 @@ namespace мессенджер
     public partial class Client : Window
     {
         private Socket server;
+
         public Client()
         {
             InitializeComponent();
@@ -48,7 +50,9 @@ namespace мессенджер
 
         private void btnotp_Click(object sender, RoutedEventArgs e)
         {
-            send(textbox1.Text);
+            string msg = "/disconnect";
+            send("0");
+            disconnect();
         }
 
         private void btnclose_Click(object sender, RoutedEventArgs e)
@@ -61,6 +65,19 @@ namespace мессенджер
         private void textbox1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private async void disconnect()
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+            Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
         }
     }
 }
